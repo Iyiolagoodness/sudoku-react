@@ -1,4 +1,4 @@
-import NumPad from './NumPad';
+
 import styles from './Sidebar.module.css';
 import { formatTime } from '../utils/sudoku';
 
@@ -86,3 +86,4 @@ export default function Sidebar({
     </aside>
   );
 }
+
