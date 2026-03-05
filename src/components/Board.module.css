@@ -1,0 +1,64 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  overflow: hidden;
+  width: min(480px, 92vw);
+  height: min(480px, 92vw);
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.3), var(--shadow);
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+  user-select: none;
+}
+
+.cell:nth-child(3n)    { border-right: 2px solid rgba(201,168,76,0.4); }
+.cell:nth-child(9n)    { border-right: none; }
+.cell:nth-last-child(-n+9) { border-bottom: none; }
+
+.given   { cursor: default; }
+.boxBottom { border-bottom: 2px solid rgba(201,168,76,0.4) !important; }
+.selected   { background: var(--selected-bg) !important; }
+.highlighted { background: var(--highlight-bg); }
+.sameNum    { background: var(--same-num-bg); }
+.errorCell  { background: var(--error-bg); }
+
+.cellNum {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(16px, 3.8vw, 26px);
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+.givenNum { color: var(--given); }
+.userNum  { color: var(--user); }
+.errorNum { color: var(--error); }
+
+.pencilGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 90%;
+  height: 90%;
+  pointer-events: none;
+}
+
+.pencilNum {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(7px, 1.2vw, 10px);
+  color: var(--pencil);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-weight: 500;
+}

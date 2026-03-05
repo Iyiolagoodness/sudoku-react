@@ -1,0 +1,127 @@
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 200px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.cardLabel {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+/* Timer */
+.timer {
+  font-family: 'DM Mono', monospace;
+  font-size: 34px;
+  font-weight: 300;
+  color: var(--gold);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.progressWrap {
+  height: 4px;
+  background: var(--surface2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+.progressLabel {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-dim);
+  margin-top: 6px;
+}
+
+/* Difficulty */
+.diffPills { display: flex; gap: 6px; flex-wrap: wrap; }
+.diffPill {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.diffPill:hover { border-color: var(--gold); color: var(--gold); }
+.diffPill.active { background: var(--gold-dim); border-color: var(--gold); color: var(--gold); }
+
+/* Buttons */
+.btnRow { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn {
+  flex: 1;
+  min-width: 70px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 9px 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+.btn:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+.btn.primary { background: var(--gold); color: #0f0f13; border-color: var(--gold); font-weight: 700; }
+.btn.primary:hover { background: var(--gold-light); }
+.btn.danger { border-color: rgba(224,92,92,0.4); color: var(--red); }
+.btn.danger:hover { background: rgba(224,92,92,0.1); border-color: var(--red); }
+.btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* Toggles */
+.toggleRow { display: flex; gap: 8px; }
+.toggleBtn {
+  flex: 1;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 6px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+.toggleBtn.toggleActive { background: var(--blue-dim); border-color: var(--blue); color: var(--blue); }
+.toggleBtn:hover:not(.toggleActive) { border-color: var(--text-mid); color: var(--text-mid); }
+
+/* Desktop numpad hidden on mobile */
+@media (max-width: 720px) {
+  .desktopNumpad { display: none; }
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  width: min(480px, 92vw);
+}

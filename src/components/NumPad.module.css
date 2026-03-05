@@ -1,0 +1,46 @@
+.numpad {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  width: min(480px, 92vw);
+  margin-top: 14px;
+}
+
+.numBtn {
+  flex: 1;
+  aspect-ratio: 1;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-weight: 700;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.12s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.numBtn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-dim);
+  transform: translateY(-2px);
+}
+
+.used {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.count {
+  position: absolute;
+  bottom: 4px;
+  right: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--text-dim);
+  font-weight: 400;
+}
